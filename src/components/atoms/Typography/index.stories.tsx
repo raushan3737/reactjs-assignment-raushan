@@ -27,6 +27,7 @@ Subtitle1.args = {
 export const Body1 = Template.bind({});
 Body1.args = {
   text: "Text here",
+  variant: 'body1',
   style: {
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.primary,
@@ -39,6 +40,7 @@ Body1.args = {
 export const Caption = Template.bind({});
 Caption.args = {
   text: "Text here",
+  variant:"caption",
   style: {
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.primary,
