@@ -1,20 +1,17 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import CustomButton from ".";
+import Button from ".";
 import theme from "../../../utils/Theme/theme";
-
 
 export default {
   title: "Components/atoms/Button",
-  component: CustomButton,
+  component: Button,
   argTypes: {
     onClick: { action: "clicked" },
   },
-} as ComponentMeta<typeof CustomButton>;
+} as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof CustomButton> = (args) => (
-  <CustomButton {...args} />
-);
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const SignIn = Template.bind({});
 SignIn.args = {

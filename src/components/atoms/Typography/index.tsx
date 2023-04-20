@@ -1,36 +1,28 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
+import { Typography as MuiTypography, ThemeProvider } from "@mui/material";
 import theme from "../../../utils/Theme/theme";
-import { ThemeProvider } from "@emotion/react";
 
-interface CustomTypographyProps {
+interface TypographyProps {
   text: string;
+  style?: React.CSSProperties;
   variant?:
     | "body1"
     | "body2"
-    | "button"
-    | "caption"
     | "h1"
     | "h2"
-    | "h3"
-    | "h4"
-    | "h5"
-    | "h6"
-    | "inherit"
-    | "overline"
     | "subtitle1"
-    | "subtitle2";
-  style?: React.CSSProperties;
+    | "subtitle2"
+    | "caption";
 }
-const CustomTypography = (props: CustomTypographyProps) => {
+const Typography = (props: TypographyProps) => {
   const { text, style, variant } = props;
   return (
     <ThemeProvider theme={theme}>
-      <Typography style={style} variant={variant}>
+      <MuiTypography style={style} variant={variant}>
         {text}
-      </Typography>
+      </MuiTypography>
     </ThemeProvider>
   );
 };
 
-export default CustomTypography;
+export default Typography;

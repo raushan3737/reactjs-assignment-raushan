@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { SignInWithHandle } from ".";
+import { ReactComponent as GoogleLogo } from "../../../utils/assets/googleLogo.svg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 export default {
@@ -15,17 +16,11 @@ const Template: ComponentStory<typeof SignInWithHandle> = (args) => (
 export const SignInWithGoogle = Template.bind({});
 SignInWithGoogle.args = {
   label: "Sign in with Google",
-  icon: (
-    <img
-      src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
-      alt="loading"
-      width={24}
-    />
-  ),
+  startIcon: <GoogleLogo />,
 };
 
 export const SignInWithGithub = Template.bind({});
 SignInWithGithub.args = {
   label: "Sign in with Github",
-  icon: <GitHubIcon />,
+  startIcon: <GitHubIcon />,
 };

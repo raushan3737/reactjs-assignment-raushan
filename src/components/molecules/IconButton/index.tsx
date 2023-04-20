@@ -1,23 +1,21 @@
 import theme from "../../../utils/Theme/theme";
-import CustomButton, { CustomButtonProps } from "../../atoms/Button";
+import Button, { ButtonProps } from "../../atoms/Button";
 
 export const SignInButton = () => {
   return (
-    <CustomButton
-      style={SignInButtonStyle}
-      variant="contained"
-      label="Sign in"
+    <Button style={SignInButtonStyle} variant="contained" label="Sign in" />
+  );
+};
+
+export const SignInWithHandle = (props: ButtonProps) => {
+  return (
+    <Button
+      label={props.label}
+      startIcon={props.startIcon}
+      style={SignInWithHandleStyle}
     />
   );
 };
-
-export const SignInWithHandle = (props: CustomButtonProps) => {
-  const { label, icon } = props;
-  return (
-    <CustomButton label={label} icon={icon} style={SignInWithHandleStyle} />
-  );
-};
-
 
 const SignInButtonStyle: React.CSSProperties = {
   display: "flex",

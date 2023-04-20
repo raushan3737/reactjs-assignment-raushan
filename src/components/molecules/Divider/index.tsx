@@ -1,19 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import Divider from "@mui/material/Divider";
-
-interface CustomDividerProps {
-  children: React.ReactNode | string;
-  type?:'left' | 'right'; 
-}
-
-export default function CustomDivider(props: CustomDividerProps) {
-  return (
-    <Root>
-      <Divider textAlign={props.type} style={{margin: '10px'}} >{props.children}</Divider>
-    </Root>
-  );
-}
+import { Divider as MuiDivider } from "@mui/material";
 
 const Root = styled("div")(({ theme }) => ({
   width: "100%",
@@ -22,3 +9,20 @@ const Root = styled("div")(({ theme }) => ({
     marginTop: theme.spacing(2),
   },
 }));
+
+interface DividerProps {
+  children: React.ReactNode | string;
+  type?: "left" | "right";
+  style?: React.CSSProperties;
+}
+
+const Divider = (props: DividerProps) => {
+  return (
+    <Root>
+      <MuiDivider textAlign={props.type} style={props.style}>
+        {props.children}
+      </MuiDivider>
+    </Root>
+  );
+};
+export default Divider;
