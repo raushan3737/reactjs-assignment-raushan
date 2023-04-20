@@ -10,13 +10,14 @@ import {
 } from "@mui/material";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
-import CustomButton from "../../../atoms/Button";
-import CustomTypography from "../../../atoms/Typography";
-import CustomDivider from "../../../molecules/Divider";
+import Button from "../../../atoms/Button";
+import Typography from "../../../atoms/Typography";
+import Divider from "../../../molecules/Divider";
 import { PasswordTextField } from "../../../molecules/PasswordTextField";
-import { SignInButton, SignInWithHandle } from "../../../molecules/IconButton";
 import { ThemeProvider } from "@material-ui/core";
 import theme from "../../../../utils/Theme/theme";
+import { SignInButton, SignInWithHandle } from "../../../molecules/IconButton";
+import { ReactComponent as GoogleLogo } from "../../../../utils/assets/googleLogo.svg";
 
 const SignIn = () => {
   return (
@@ -24,59 +25,55 @@ const SignIn = () => {
       <OuterGrid container>
         <InnerGrid item>
           <InnerCard>
-            <CustomTypography text="Sign in" variant="body1" />
-            <CustomTypography
+            <Typography text="Sign in" variant="body1" />
+            <Typography
               text="Please enter your login credentials"
               variant="body2"
             />
-            <CustomTypography text="Email" variant="body2" />
+            <Typography text="Email" variant="body2" />
             <TextField
               placeholder="rhernandez@gmail.com"
               style={{ marginBottom: "10px" }}
             />
-            <CustomTypography text="Password" variant="body2" />
+            <Typography text="Password" variant="body2" />
             <PasswordTextField />
             <Stack direction={"row"} spacing={9} justifyContent="center">
               <FormGroup row>
                 <FormControlLabel
                   control={<Checkbox />}
-                  label={
-                    <CustomTypography text="Remember me" variant="body2" />
-                  }
+                  label={<Typography text="Remember me" variant="body2" />}
                 />
               </FormGroup>
-              <CustomButton
+              <Button
                 label="Forgot password?"
-                style={{ color: "#224DFF", textTransform: "none" }}
+                style={{
+                  color: theme.palette.primary.main,
+                  textTransform: "none",
+                }}
               />
             </Stack>
             <SignInButton />
-            <CustomDivider
-              children={<CustomTypography text="or" variant="body2" />}
-            />
+            <Divider children={<Typography text="or" variant="body2" />} />
             <SignInWithHandle
               label="Sign in with Google"
-              icon={
-                <img
-                  src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
-                  alt="loading"
-                  width={24}
-                />
-              }
+              startIcon={<GoogleLogo />}
             />
             <SignInWithHandle
               label="Sign in with Github"
-              icon={<GitHubIcon />}
+              startIcon={<GitHubIcon />}
             />
             <Stack
               direction={"row"}
               justifyContent="center"
               alignItems="center"
             >
-              <CustomTypography text="Don't have an account?" variant="body2" />
-              <CustomButton
+              <Typography text="Don't have an account?" variant="body2" />
+              <Button
                 label="Sign up"
-                style={{ color: "#224DFF", textTransform: "none" }}
+                style={{
+                  color: theme.palette.primary.main,
+                  textTransform: "none",
+                }}
               />
             </Stack>
           </InnerCard>

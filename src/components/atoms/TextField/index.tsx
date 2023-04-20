@@ -1,7 +1,8 @@
 import React from "react";
-import TextField from "@mui/material/TextField";
+import { TextField as MuiTextField, ThemeProvider } from "@mui/material";
+import theme from "../../../utils/Theme/theme";
 
-interface CustomTextFieldProps {
+interface TextFieldProps {
   placeholder: string;
   style?: React.CSSProperties;
   value?: string;
@@ -9,17 +10,19 @@ interface CustomTextFieldProps {
   InputProps?: any;
 }
 
-const CustomTextField = (props: CustomTextFieldProps) => {
+const TextField = (props: TextFieldProps) => {
   const { placeholder, style, onChange, InputProps } = props;
 
   return (
-    <TextField
-      style={style}
-      placeholder={placeholder}
-      onChange={onChange}
-      InputProps={InputProps}
-    />
+    <ThemeProvider theme={theme}>
+      <MuiTextField
+        style={style}
+        placeholder={placeholder}
+        onChange={onChange}
+        InputProps={InputProps}
+      />
+    </ThemeProvider>
   );
 };
 
-export default CustomTextField;
+export default TextField;

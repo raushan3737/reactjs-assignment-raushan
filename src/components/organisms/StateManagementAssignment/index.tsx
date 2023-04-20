@@ -13,13 +13,14 @@ import {
   Stack,
   Grid,
   ThemeProvider,
+  styled,
 } from "@mui/material";
 import { FilterAltOutlined, MoreVert } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import TablePagination from "@mui/material/TablePagination";
 import theme from "../../../utils/Theme/theme";
-import CustomTypography from "../../atoms/Typography";
+import Typography from "../../atoms/Typography";
 import tableData from "../../../utils/Data/CandidateDetailsData.json";
 import { StatusChip } from "../../atoms/Chip";
 
@@ -29,7 +30,7 @@ interface CandidateColumnProps {
   align?: "right";
 }
 
-const candidateColumns: CandidateColumnProps[] = [
+export const candidateColumns: CandidateColumnProps[] = [
   { id: "name", label: "NAME" },
   { id: "adjudication", label: "ADJUDICATION" },
   {
@@ -49,22 +50,34 @@ const candidateColumns: CandidateColumnProps[] = [
   },
 ];
 
-interface rowsOptionProps {
+export interface rowsOptionProps {
   label: string;
   value: number;
 }
-let rowsOption: rowsOptionProps[] = [
+
+export let rowsOption: rowsOptionProps[] = [
   { label: "2 per page", value: 2 },
   { label: "5 per page", value: 5 },
   { label: "7 per page", value: 7 },
   { label: "10 per page", value: 10 },
 ];
 
+const OuterGrid = styled(Grid)({
+  justifyContent: "center",
+  flexGrow: "grow",
+  flexWrap: "wrap",
+});
+
+const searchbarStyle: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "flex-end",
+  marginBottom: "20px",
+};
+
 const CandidateTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [searchText, setSearchText] = useState("");
-
   const candidatesData = tableData;
 
   const handleChangePage = (event: unknown, newPage: number) => {
@@ -93,21 +106,10 @@ const CandidateTable = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid
-        container
-        justifyContent={"center"}
-        flexGrow={"grow"}
-        flexWrap={"wrap"}
-      >
+      <OuterGrid container>
         <Stack width={"90%"}>
-          <CustomTypography text="Candidate Information" variant="h5" />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              marginBottom: "20px",
-            }}
-          >
+          <Typography text="Candidate Information" variant="h2" />
+          <div style={searchbarStyle}>
             <TextField
               size="small"
               value={searchText}
@@ -164,7 +166,7 @@ const CandidateTable = () => {
                               key={candidateColumn.id}
                               align={candidateColumn.align}
                             >
-                              <CustomTypography text={value} />
+                              <Typography text={value} />
                             </TableCell>
                           ) : (
                             <TableCell
@@ -200,7 +202,7 @@ const CandidateTable = () => {
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
         </Stack>
-      </Grid>
+      </OuterGrid>
     </ThemeProvider>
   );
 };

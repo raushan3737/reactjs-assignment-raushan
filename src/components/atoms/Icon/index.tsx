@@ -1,12 +1,17 @@
-import { Icon } from "@mui/material";
 import React from "react";
+import { Icon as MuiIcon, ThemeProvider } from "@mui/material";
+import theme from "../../../utils/Theme/theme";
 
-interface CustomIconProps {
+interface IconProps {
   iconElement: React.ReactNode;
 }
 
-const CustomIcon = (props: CustomIconProps) => {
-  return <Icon >{props.iconElement}</Icon>;
+const Icon = (props: IconProps) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <MuiIcon>{props.iconElement}</MuiIcon>
+    </ThemeProvider>
+  );
 };
 
-export default CustomIcon;
+export default Icon;

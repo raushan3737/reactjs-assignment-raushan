@@ -1,51 +1,29 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import CustomTypography from ".";
+import Typography from ".";
 import theme from "../../../utils/Theme/theme";
+import { ThemeProvider } from "@mui/material";
 
 export default {
   title: "Components/atoms/Typography",
-  component:  CustomTypography,
-} as ComponentMeta<typeof  CustomTypography>;
+  component: Typography,
+} as ComponentMeta<typeof Typography>;
 
-const Template: ComponentStory<typeof  CustomTypography> = (args) => (
-  < CustomTypography {...args} />
+const Template: ComponentStory<typeof Typography> = (args) => (
+  <ThemeProvider theme={theme}>
+    <Typography {...args} />
+  </ThemeProvider>
 );
 
 export const Subtitle1 = Template.bind({});
 Subtitle1.args = {
   text: "Text here",
-  style: {
-    fontFamily: theme.typography.fontFamily,
-    color: theme.palette.text.primary,
-    fontSize: theme.typography.subtitle1.fontSize,
-    fontWeight: theme.typography.subtitle1.fontWeight,
-    lineHeight: theme.typography.subtitle1.lineHeight,
-  },
+  variant: "subtitle1",
 };
 
 export const Body1 = Template.bind({});
 Body1.args = {
   text: "Text here",
-  variant: 'body1',
-  style: {
-    fontFamily: theme.typography.fontFamily,
-    color: theme.palette.text.primary,
-    fontSize: theme.typography.body1.fontSize,
-    fontWeight: theme.typography.body1.fontWeight,
-    lineHeight: theme.typography.body1.lineHeight,
-  },
+  variant: "body1",
 };
 
-export const Caption = Template.bind({});
-Caption.args = {
-  text: "Text here",
-  variant:"caption",
-  style: {
-    fontFamily: theme.typography.fontFamily,
-    color: theme.palette.text.primary,
-    fontSize: theme.typography.caption.fontSize,
-    fontWeight: theme.typography.caption.fontWeight,
-    lineHeight: theme.typography.caption.lineHeight,
-  },
-};

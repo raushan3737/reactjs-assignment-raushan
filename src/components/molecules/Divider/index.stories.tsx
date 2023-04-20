@@ -1,21 +1,17 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import CustomDivider from ".";
-import CustomTypography from "../../atoms/Typography";
-
+import Divider from ".";
+import Typography from "../../atoms/Typography";
 
 export default {
   title: "Components/molecules/Divider",
-  component: CustomDivider,
-} as ComponentMeta<typeof CustomDivider>;
+  component: Divider,
+} as ComponentMeta<typeof Divider>;
 
-const Template: ComponentStory<typeof CustomDivider> = (args) => (
-  <CustomDivider {...args} />
+const Template: ComponentStory<typeof Divider> = (args) => (
+  <Divider {...args} />
 );
-
 
 export const centreDivider = Template.bind({});
 centreDivider.args = {
-  children: <CustomTypography text={"OR"}  />, 
-}
-
-
+  children: <Typography text={"OR"} />,
+};
