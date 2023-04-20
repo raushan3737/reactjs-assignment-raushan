@@ -1,19 +1,22 @@
 import React from "react";
-import Checkbox from "@mui/material/Checkbox";
-interface CustomCheckBoxProps {
+import { Checkbox as MuiCheckbox, ThemeProvider } from "@mui/material";
+import theme from "../../../utils/Theme/theme";
+interface CheckBoxProps {
   label?: string;
   checked?: boolean;
 }
 
-const CustomCheckBox = (props: CustomCheckBoxProps) => {
+const CheckBox = (props: CheckBoxProps) => {
   const { label, checked } = props;
 
   return (
-    <div>
-      <Checkbox id="checkbox" checked={checked} />
-      <label htmlFor="checkbox">{label}</label>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <MuiCheckbox id="checkbox" checked={checked} />
+        <label htmlFor="checkbox">{label}</label>
+      </div>
+    </ThemeProvider>
   );
 };
 
-export default CustomCheckBox;
+export default CheckBox;

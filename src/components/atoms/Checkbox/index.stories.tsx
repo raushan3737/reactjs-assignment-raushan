@@ -1,21 +1,21 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import CustomCheckBox from ".";
+import CheckBox from ".";
 
 export default {
   title: "Components/atoms/Checkbox",
-  component: CustomCheckBox,
+  component: CheckBox,
   argTypes: {
     onClick: { action: "clicked" },
   },
-} as ComponentMeta<typeof CustomCheckBox>;
+} as ComponentMeta<typeof CheckBox>;
 
-const Template: ComponentStory<typeof CustomCheckBox> = (args) => (
-  <CustomCheckBox {...args} />
+const Template: ComponentStory<typeof CheckBox> = (args) => (
+  <CheckBox {...args} />
 );
 
 export const CheckboxStandard = Template.bind({});
 CheckboxStandard.args = {
-  label: 'Remember me' , 
+  label: "Remember me",
   checked: true,
-
 };
+

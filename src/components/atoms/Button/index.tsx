@@ -1,27 +1,37 @@
 import React from "react";
-import { Button } from "@mui/material";
+import { Button as MuiButton, ThemeProvider } from "@mui/material";
+import theme from "../../../utils/Theme/theme";
 
-interface CustomButtonProps {
+interface ButtonProps {
   label: string;
   variant?: "contained" | "outlined" | "text";
   size?: "small" | "medium" | "large";
   onClick?: () => void;
   style?: React.CSSProperties;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
+  disabled?: boolean;
 }
 
-const CustomButton = (props: CustomButtonProps) => {
-  const { label, variant, size, onClick, style } = props;
+const Button = (props: ButtonProps) => {
+  const { label, variant, size, onClick, style, startIcon, endIcon, disabled } =
+    props;
   return (
-    <Button
-      onClick={onClick}
-      variant={variant}
-      style={style}
-      size={size}
-      disableElevation
-    >
-      {label}
-    </Button>
+    <ThemeProvider theme={theme}>
+      <MuiButton
+        onClick={onClick}
+        disabled={disabled}
+        variant={variant}
+        style={style}
+        size={size}
+        startIcon={startIcon}
+        endIcon={endIcon}
+        disableElevation
+      >
+        {label}
+      </MuiButton>
+    </ThemeProvider>
   );
 };
 
-export default CustomButton;
+export default Button;

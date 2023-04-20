@@ -1,14 +1,14 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import CustomTextField from ".";
+import TextField from ".";
 import theme from "../../../utils/Theme/theme";
 
 export default {
   title: "Components/atoms/TextField",
-  component: CustomTextField,
-} as ComponentMeta<typeof CustomTextField>;
+  component: TextField,
+} as ComponentMeta<typeof TextField>;
 
-const Template: ComponentStory<typeof CustomTextField> = (args) => (
-  <CustomTextField {...args} />
+const Template: ComponentStory<typeof TextField> = (args) => (
+  <TextField {...args} />
 );
 
 export const Email = Template.bind({});

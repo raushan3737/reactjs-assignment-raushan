@@ -1,20 +1,14 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import CustomCard from ".";
-
+import Card from ".";
 
 export default {
-  title: "Components/molecules/TextFieldIcon",
-  component: CustomCard,
-} as ComponentMeta<typeof CustomCard>;
+  title: "Components/molecules/Card",
+  component: Card,
+} as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof CustomCard> = (args) => (
-  <CustomCard {...args} />
-);
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
-
-export const Card = Template.bind({});
-Card.args = {
-  content: "Welcome to the card molecule"
-}
-
-
+export const StyledCard = Template.bind({});
+StyledCard.args = {
+  content: "Welcome to the card molecule",
+};

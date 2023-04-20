@@ -1,14 +1,19 @@
 import React from "react";
-import { Card } from "@mui/material";
+import { Card as MuiCard, ThemeProvider } from "@mui/material";
+import theme from "../../../utils/Theme/theme";
 
-interface CustomCardProps {
+interface CardProps {
   content: React.ReactNode | string;
   style?: React.CSSProperties;
 }
 
-const CustomCard = (props: CustomCardProps) => {
+const Card = (props: CardProps) => {
   const { content, style } = props;
-  return <Card style={style}>{content}</Card>;
+  return (
+    <ThemeProvider theme={theme}>
+      <MuiCard style={style}>{content}</MuiCard>
+    </ThemeProvider>
+  );
 };
 
-export default CustomCard;
+export default Card;

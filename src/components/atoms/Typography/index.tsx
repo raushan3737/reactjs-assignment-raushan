@@ -1,13 +1,28 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
+import { Typography as MuiTypography, ThemeProvider } from "@mui/material";
+import theme from "../../../utils/Theme/theme";
 
-interface CustomTypographyProps {
+interface TypographyProps {
   text: string;
   style?: React.CSSProperties;
+  variant?:
+    | "body1"
+    | "body2"
+    | "h1"
+    | "h2"
+    | "subtitle1"
+    | "subtitle2"
+    | "caption";
 }
-const CustomTypography = (props: CustomTypographyProps) => {
-  const { text, style } = props;
-  return <Typography style={style}>{text}</Typography>;
+const Typography = (props: TypographyProps) => {
+  const { text, style, variant } = props;
+  return (
+    <ThemeProvider theme={theme}>
+      <MuiTypography style={style} variant={variant}>
+        {text}
+      </MuiTypography>
+    </ThemeProvider>
+  );
 };
 
-export default CustomTypography;
+export default Typography;
