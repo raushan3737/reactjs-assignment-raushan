@@ -1,17 +1,15 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { StatusChip } from ".";
+import Chip from ".";
 
 export default {
   title: "Components/atoms/Chip",
-  component: StatusChip,
+  component: Chip,
   argTypes: {
     onClick: { action: "clicked" },
   },
-} as ComponentMeta<typeof StatusChip>;
+} as ComponentMeta<typeof Chip>;
 
-const Template: ComponentStory<typeof StatusChip> = (args) => (
-  <StatusChip {...args} />
-);
+const Template: ComponentStory<typeof Chip> = (args) => <Chip {...args} />;
 
 export const clearChip = Template.bind({});
 clearChip.args = {
