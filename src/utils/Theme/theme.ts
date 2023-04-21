@@ -27,8 +27,8 @@ const theme = createTheme({
             900: '#F2F5FF',
         },
         success: {
-            main: '#4D8066',
-            light: '#C6CEF7',
+            main: '#A08817',
+            light: '#17A076',
         },
         error: {
             main: '#DA4D4D',
@@ -44,6 +44,11 @@ const theme = createTheme({
             main: '#757380',
         },
         divider: '#E9E8ED',
+        background:{
+            paper:"#F2FCFB",
+            default: '#FAF8EB'
+            
+        }
     },
 
     typography: {

@@ -1,23 +1,35 @@
 import styled from "@emotion/styled";
-import { Chip } from "@mui/material";
-
-interface StatusChipProp {
+import { Chip as MuiChip, ThemeProvider } from "@mui/material";
+import theme from "../../../utils/Theme/theme";
+interface ChipProp {
   label: string;
 }
 
-const StyledChip = styled(Chip)((props: StatusChipProp) => ({
+const StyledChip = styled(MuiChip)((props: ChipProp) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  background: props.label === "CLEAR" ? "#F2FCFB" : "#FAF8EB",
-  border: "1px solid #F2FCFB",
-  color: props.label === "CLEAR" ? "#17A076" : "#A08817",
+  background:
+    props.label === "CLEAR"
+      ? theme.palette.background.paper
+      : theme.palette.background.default,
+  border: `1px solid ${theme.palette.background.paper}`,
+  color:
+    props.label === "CLEAR"
+      ? theme.palette.success.light
+      : theme.palette.success.main,
   borderRadius: "4px",
   gap: "10px",
   width: "6rem",
   height: "26px",
 }));
 
-export const StatusChip = (props: StatusChipProp) => {
-  return <StyledChip label={props.label} />;
+const Chip = (props: ChipProp) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <StyledChip label={props.label} />
+    </ThemeProvider>
+  );
 };
+
+export default Chip;
