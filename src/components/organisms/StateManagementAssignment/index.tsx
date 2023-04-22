@@ -22,7 +22,7 @@ import TablePagination from "@mui/material/TablePagination";
 import theme from "../../../utils/Theme/theme";
 import Typography from "../../atoms/Typography";
 import tableData from "../../../utils/Data/CandidateDetailsData.json";
-import { StatusChip } from "../../atoms/Chip";
+import Chip from "../../atoms/Chip";
 
 interface CandidateColumnProps {
   id: "name" | "adjudication" | "status" | "location" | "date";
@@ -176,9 +176,9 @@ const CandidateTable = () => {
                               {value !== "CLEAR" && value !== "CONSIDER" ? (
                                 value
                               ) : value === "CLEAR" ? (
-                                <StatusChip label={value} />
+                                <Chip label={value} />
                               ) : (
-                                <StatusChip label={value} />
+                                <Chip label={value} />
                               )}
                             </TableCell>
                           );
