@@ -6,7 +6,7 @@ export interface ButtonProps {
   label: string;
   variant?: "contained" | "outlined" | "text";
   size?: "small" | "medium" | "large";
-  onClick?: (arg0: any) => void;
+  onClick?: () => void;
   style?: React.CSSProperties;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
