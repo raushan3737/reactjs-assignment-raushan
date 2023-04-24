@@ -1,1 +1,1 @@
-- State Management- Design a Candidate table which supports pagination to move to next/previous page including the search functionality.
+- Axios assignment
