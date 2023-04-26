@@ -1,6 +1,8 @@
 import React from "react";
 import CandidateTable from "./components/organisms/StateManagementAssignment";
 import SignIn from "./components/organisms/ParentChildAssignment/SignInCard";
+import UsersList from "./components/organisms/AxiosAssignment/UsersList";
+import AddUserForm from "./components/organisms/AxiosAssignment/AddUserForm";
 
 const App = () => {
   return (
@@ -9,8 +11,11 @@ const App = () => {
       {/* Parent Child Relationship Assignment: SignIn Card  */}
       {/* <SignIn /> */}
       {/* State Management Assignment: SignIn Card  */}
-      <CandidateTable />
-
+      {/* <CandidateTable /> */}
+       <CandidateTable />
+      {/* Axios assignment */}
+      <AddUserForm />
+      <UsersList />
     </div>
   );
 };
