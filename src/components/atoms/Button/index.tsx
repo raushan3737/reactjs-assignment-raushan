@@ -2,7 +2,7 @@ import React from "react";
 import { Button as MuiButton, ThemeProvider } from "@mui/material";
 import theme from "../../../utils/Theme/theme";
 
-interface ButtonProps {
+export interface ButtonProps {
   label: string;
   variant?: "contained" | "outlined" | "text";
   size?: "small" | "medium" | "large";
