@@ -10,6 +10,7 @@ const App = () => {
       {/* <SignIn /> */}
       {/* State Management Assignment: SignIn Card  */}
       <CandidateTable />
+
     </div>
   );
 };
